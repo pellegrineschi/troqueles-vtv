@@ -19,26 +19,51 @@
       </mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content>
-      <p>Total del rango: {{calcularTotalRango(rango)}}</p>
-      <p>Formularios anulados: {{contarFormulariosAnulados(rango.fecha)}}</p>
-      <p>Troqueles cancelados: {{contarTroquelesCancelados(rango.fecha)}}</p>
-      <strong>Troqueles vigentes: {{calcularTroquelesVigentes(rango)}}</strong> 
-      
-      <h3>Formuarios Anulados</h3>
+   <mat-card-content>
+    <div class="summary-grid">
+      <div>
+        <span>Total de rango</span>
+        <strong>{{calcularTotalRango(rango)}}</strong>
+      </div>
+
+      <div>
+        <span>Formularios anulados</span>
+        <strong>{{contarFormulariosAnulados(rango.fecha)}}</strong>
+      </div>
+
+      <div>
+        <span>Troqueles cancelados</span>
+        <strong>{{contarTroquelesCancelados(rango.fecha)}}</strong>
+      </div>
+
+      <div>
+        <span>Troqueles vigentes</span>
+        <strong>{{calcularTroquelesVigentes(rango)}}</strong>
+      </div>
+    </div>
+
+    <section class="detail-section">
+      <h3>Formularios anulados</h3>
+
       <ul>
         <li *ngFor="let formulario of obtenerFormulariosAnulados(rango.fecha)">
           {{formulario.numero}} - {{formulario.motivo}} - {{formulario.dominio}}
         </li>
       </ul>
 
-      <h3>Troqueles Canceados</h3>
+    </section>
+
+    <section class="detail-section">
+      <h3>Troqueles cancelados</h3>
+
       <ul>
-        <li *ngFor="let troquel of obtenerTroquelesCancelados(rango.fecha)">
-          {{troquel.numero}} - {{troquel.motivo}} - {{troquel.dominio}}
+        <li *ngFor="let troqueles of obtenerTroquelesCancelados(rango.fecha)">
+          {{troqueles.numero}} - {{troqueles.motivo}} - {{troqueles.dominio}}
         </li>
       </ul>
-    </mat-card-content>
+
+    </section>
+   </mat-card-content>
 
   </mat-card>
 
