@@ -1,0 +1,38 @@
+.page-header {
+  margin-bottom: 24px;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 4px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+mat-icon[mat-card-avatar] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+}
+
+@media (max-width: 700px) {
+  .user-grid {
+    grid-template-columns: 1fr;
+  }
+}

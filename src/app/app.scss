@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.admin-shell {
+  min-height: 100dvh;
+}
+
+.admin-sidebar {
+  width: 260px;
+  border-right: 1px solid var(--mat-sys-outline-variant);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 0 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--mat-sys-primary);
+}
+
+.brand mat-icon {
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+}
+
+.active-link {
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+}
+
+.admin-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+  background: var(--mat-sys-surface);
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.admin-content {
+  padding: 24px;
+}
