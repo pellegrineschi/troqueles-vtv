@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 
-interface RangoTroquel{
+interface RangoTroquel {
   fecha: string;
   desde: number;
   hasta: number;
 }
 
-interface FormularioAnulado{
+interface FormularioAnulado {
   fecha: string;
   numero: number;
   motivo: string;
   dominio: string;
 }
 
-interface TroquelCancelado{
+interface TroquelCancelado {
   fecha: string;
   numero: number;
   motivo: string;
@@ -28,11 +28,28 @@ interface TroquelCancelado{
 })
 export class Troqueles {
 
+  columnasRangos: string[] = [
+    "Fecha",
+    "Desde",
+    "Hasta",
+    "Total",
+    "Anulados",
+    "Cancelados",
+    "Vigentes"
+
+
+  ]
+
   rangos: RangoTroquel[] = [
     {
       fecha: '2023-02-01',
       desde: 4091593,
       hasta: 4092015
+    },
+    {
+      fecha: '2023-02-02',
+      desde: 4092016,
+      hasta: 4092483
     }
   ];
 
@@ -54,6 +71,12 @@ export class Troqueles {
       numero: 3918558,
       motivo: "cambio de parabrisas",
       dominio: "JLD504"
+    },
+    {
+      fecha: '2023-02-02',
+      numero: 4092100,
+      motivo: 'Mal impreso',
+      dominio: '-',
     }
   ];
 
@@ -74,26 +97,26 @@ export class Troqueles {
     return this.formulariosAnulados.filter((formulario) => formulario.fecha === fecha).length;
   }
 
-  obtenerFormulariosAnulados(fecha: string): FormularioAnulado[]{
-    return this.formulariosAnulados.filter((formulario)=> formulario.fecha === fecha);
+  obtenerFormulariosAnulados(fecha: string): FormularioAnulado[] {
+    return this.formulariosAnulados.filter((formulario) => formulario.fecha === fecha);
   }
 
   contarTroquelesCancelados(fecha: string): number {
     return this.troquelesCancelados.filter((troquel) => troquel.fecha === fecha).length;
   }
 
-  obtenerTroquelesCancelados(fecha: string): TroquelCancelado[]{
-    return this.troquelesCancelados.filter((troquel)=> troquel.fecha === fecha);
+  obtenerTroquelesCancelados(fecha: string): TroquelCancelado[] {
+    return this.troquelesCancelados.filter((troquel) => troquel.fecha === fecha);
   }
 
   calcularTroquelesVigentes(rango: RangoTroquel): number {
-    return(
+    return (
       this.calcularTotalRango(rango) -
       this.contarFormulariosAnulados(rango.fecha) -
       this.contarTroquelesCancelados(rango.fecha)
     )
   }
 
-  
+
 }
 
