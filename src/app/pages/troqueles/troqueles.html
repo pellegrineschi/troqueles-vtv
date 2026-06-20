@@ -10,6 +10,10 @@
   </button>
 </section>
 
+<app-formulario-rango-troquel
+(rangoCreado)="agregarRango($event)"
+></app-formulario-rango-troquel>
+
 <section class="stats-grid">
   <mat-card *ngFor="let rango of rangos">
     <mat-card-header>

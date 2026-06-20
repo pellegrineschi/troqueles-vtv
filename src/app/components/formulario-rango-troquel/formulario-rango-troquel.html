@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Nuevo rango</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input matInput type="date" [(ngModel)]="fecha"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Desde</mat-label>
+            <input matInput type="number" [(ngModel)]="desde"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Hasta</mat-label>
+            <input matInput type="number" [(ngModel)]="hasta"/>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" type="button" (click)="agregarRango()">
+            Agregar rango
+        </button>
+
+    </mat-card-content>
+</mat-card>

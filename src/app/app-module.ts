@@ -14,11 +14,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { ResumenTroqueles } from './components/resumen-troqueles/resumen-troqueles';
+import { FormularioRangoTroquel } from './components/formulario-rango-troquel/formulario-rango-troquel';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [App, Dashboard, Troqueles, Usuarios, ResumenTroqueles],
+  declarations: [App, Dashboard, Troqueles, Usuarios, ResumenTroqueles, FormularioRangoTroquel],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MatButtonModule,
     MatCardModule,
@@ -27,6 +32,8 @@ import { ResumenTroqueles } from './components/resumen-troqueles/resumen-troquel
     MatSidenavModule,
     MatToolbarModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

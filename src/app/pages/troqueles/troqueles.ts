@@ -52,6 +52,7 @@ export class Troqueles {
       hasta: 4092483
     }
   ];
+  
 
   formulariosAnulados: FormularioAnulado[] = [
     {
@@ -116,6 +117,10 @@ export class Troqueles {
       this.contarFormulariosAnulados(rango.fecha) -
       this.contarTroquelesCancelados(rango.fecha)
     )
+  }
+
+  agregarRango(rango: RangoTroquel): void {
+    this.rangos.push(rango);
   }
 
 
