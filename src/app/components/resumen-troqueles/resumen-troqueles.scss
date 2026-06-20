@@ -12,6 +12,13 @@
   padding: 16px;
   border: 1px solid var(--mat-sys-outline-variant);
   border-radius: 8px;
+  background: color-mix(in srgb, var(--mat-sys-surface-container) 80%, var(--mat-sys-surface));
+}
+
+.summary-grid div:last-child {
+  border-color: color-mix(in srgb, var(--mat-sys-primary) 35%, var(--mat-sys-outline-variant));
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
 }
 
 .summary-grid span {
@@ -19,6 +26,23 @@
   font-size: 0.9rem;
 }
 
+.summary-grid div:last-child span {
+  color: var(--mat-sys-on-primary-container);
+}
+
 .summary-grid strong {
   font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 900px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
 }
