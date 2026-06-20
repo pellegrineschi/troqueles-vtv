@@ -13,9 +13,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
+import { ResumenTroqueles } from './components/resumen-troqueles/resumen-troqueles';
 
 @NgModule({
-  declarations: [App, Dashboard, Troqueles, Usuarios],
+  declarations: [App, Dashboard, Troqueles, Usuarios, ResumenTroqueles],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,7 +26,7 @@ import { MatTableModule } from '@angular/material/table';
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

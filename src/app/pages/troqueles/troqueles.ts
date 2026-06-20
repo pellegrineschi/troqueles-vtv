@@ -87,6 +87,7 @@ export class Troqueles {
       motivo: "Reve de apto",
       dominio: "LXZ810"
     },
+    
   ];
 
   calcularTotalRango(rango: RangoTroquel): number {

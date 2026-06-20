@@ -21,25 +21,12 @@
 
    <mat-card-content>
     <div class="summary-grid">
-      <div>
-        <span>Total de rango</span>
-        <strong>{{calcularTotalRango(rango)}}</strong>
-      </div>
-
-      <div>
-        <span>Formularios anulados</span>
-        <strong>{{contarFormulariosAnulados(rango.fecha)}}</strong>
-      </div>
-
-      <div>
-        <span>Troqueles cancelados</span>
-        <strong>{{contarTroquelesCancelados(rango.fecha)}}</strong>
-      </div>
-
-      <div>
-        <span>Troqueles vigentes</span>
-        <strong>{{calcularTroquelesVigentes(rango)}}</strong>
-      </div>
+     <app-resumen-troqueles
+     [total]="calcularTotalRango(rango)"
+     [anulados]="contarFormulariosAnulados(rango.fecha)"
+     [cancelados]="contarTroquelesCancelados(rango.fecha)"
+     [vigentes]="calcularTroquelesVigentes(rango)"
+     ></app-resumen-troqueles>
     </div>
 
     <section class="detail-section">
